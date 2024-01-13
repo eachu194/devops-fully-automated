@@ -52,7 +52,7 @@ pipeline {
 
         stage('Package') {
             steps {
-                sh 'mvn package -DskipTests'            
+                sh 'mvn package -DskipTests'   # to skip the test stage during the packege stage         
             }
             post {
                 success {

@@ -25,6 +25,8 @@ pipeline {
 
         stage('Checkstyle Code Analysis') {
             steps {
+                sh 'sudo rm -f /var/lib/jenkins/.m2/settings.xml'  #comment out thisline if_getting any conflict
+                sh 'sudo rm -rf /avr/lib/jenkins/.m2/repository/*' #comment out thisline if_getting any conflict
                 sh 'mvn checkstyle:checkstyle'
             }
             post {
